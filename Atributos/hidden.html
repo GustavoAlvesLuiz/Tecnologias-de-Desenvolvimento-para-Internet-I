@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributo hidden</title>
+</head>
+<body>
+    <div>
+        <span>Saldo:</span>
+        <span id="cash" hidden>R$ 1.000,00</span>
+        <div>
+            <button id="buttonOcultar" type="button">Ocultar</button>
+        </div>
+    </div>
+
+    <script>
+       buttonOcultar.addEventListener('click', event =>{
+           const spanCash = document.getElementById('cash');
+           const buttoHidden= document.getElementById('buttonOcultar');
+           const isHidden = spanCash.getAttribute('hidden');
+          if(isHidden == null){
+            buttoHidden.innerHTML = 'Exibir';
+            spanCash.setAttribute('hidden', 'hidden');
+          }else{
+            buttoHidden.innerHTML = 'Ocultar';
+            spanCash.removeAttribute('hidden');
+          }
+       });
+    </script>
+</body>
+</html>
